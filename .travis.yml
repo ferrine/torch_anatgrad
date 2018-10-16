@@ -6,8 +6,7 @@ sudo: false
 
 install:
   - cp Makefile.template Makefile
-  - pip install .
-  - pip install -r requirements-dev.txt
+  - pip install -r requirements.txt -r requirements-dev.txt
 
 script:
   - make codestyle
