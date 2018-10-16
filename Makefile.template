@@ -1,0 +1,28 @@
+.PHONY: pep8-inplace
+pep8-inplace:
+	black torch_anatgrad
+
+.PHONY: pep8
+pep8:
+	black --diff torch_anatgrad
+
+.PHONY: lint
+lint:
+	pylint torch_anatgrad
+
+.PHONY: codestyle
+codestyle: pep8 lint
+
+.PHONY: install
+install:
+	pip install -e . --process-dependency-links
+
+.PHONY: install-dev
+install-dev: install
+	pip install -r requirements-dev.txt
+	pre-commit install
+	pre-commit autoupdate
+
+.PHONY: tests
+tests:
+	py.test

@@ -1,0 +1,8 @@
+# https://travis-ci.org/pytorch/pytorch
+language: python
+python: "3.6"
+dist: xenial
+sudo: false
+
+install: cp Makefile.template Makefile && make install-dev
+script: make codestyle && make tests

@@ -1,0 +1,5 @@
+pytest
+pylint
+black
+pytest-helpers-namespace
+pre-commit

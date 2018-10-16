@@ -1,0 +1,7 @@
+repos:
+-   repo: https://github.com/ambv/black.git
+    rev: 18.9b0
+    hooks:
+    - id: black
+      args:
+        - --diff
