@@ -1,14 +1,7 @@
 repos:
--   repo: https://github.com/ambv/black
-    rev: stable
+-   repo: https://github.com/ambv/black.git
+    rev: 18.9b0
     hooks:
     - id: black
-      language_version: python3.6
--   repo: https://github.com/coldnight/pre-commit-pylint.git
-    sha: v0.0.2
-    hooks:
-    -   id: pylint-py3k
-    -   id: pylint-score-limit
-        args:
-        - --limit=8.5
-        - --rcfile=./.pylintrc
+      args:
+        - --diff

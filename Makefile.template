@@ -1,6 +1,10 @@
+.PHONY: pep8-inplace
+pep8-inplace:
+	black torch_anatgrad
+
 .PHONY: pep8
 pep8:
-	black torch_anatgrad
+	black --diff torch_anatgrad
 
 .PHONY: lint
 lint:
@@ -11,11 +15,13 @@ codestyle: pep8 lint
 
 .PHONY: install
 install:
-	pip install -e python --process-dependency-links
+	pip install -e . --process-dependency-links
 
-.PHONY: configure
-configure:
-	if [ ! -f .git/hooks/pre-commit ]; then ln -s ../../git-hooks/pre-commit .git/hooks/pre-commit; fi;
+.PHONY: install-dev
+install-dev: install
+	pip install -r requirements-dev.txt
+	pre-commit install
+	pre-commit autoupdate
 
 .PHONY: tests
 tests:
