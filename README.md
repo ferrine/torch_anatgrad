@@ -1,4 +1,6 @@
 # torch_anatgrad
+[![Build Status](https://travis-ci.com/ferrine/torch_anatgrad.svg?branch=master)](https://travis-ci.com/ferrine/torch_anatgrad)
+
 Accelerating Natural Gradient with Higher-Order Invariance https://arxiv.org/abs/1803.01273
 
 # User installation
