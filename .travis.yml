@@ -6,7 +6,7 @@ sudo: false
 
 install:
   - cp Makefile.template Makefile
-  - make install-dev
+  - make install-dev > /dev/null
 
 script:
   - make codestyle
